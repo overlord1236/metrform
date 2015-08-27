@@ -1,0 +1,350 @@
+/*-----------------Обнуление стилей--------------------*/
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td 
+{ margin:0; padding:0; border:0; outline:0;
+ font-weight:inherit; font-style:inherit; font-size:100%; font-family:inherit; 
+ vertical-align:baseline; }
+
+/* не забудьте определить состояник "фокус", стилей */
+:focus { outline:0; }
+body { line-height:1; color:black; background:white; }
+ol, ul { list-style:none; }
+
+/* таблицам необходим cellspacing="0" в разметке */
+table { border-collapse:separate; border-spacing:0; }
+caption, th, td { text-align:left; font-weight:normal; }
+blockquote:before, blockquote:after, q:before, q:after { content:""; }
+blockquote, q { quotes:"" ""; }
+
+
+
+
+/*-------------------------------------*/
+
+
+@font-face{
+	font-family: OpenSansBold;
+	src:local("OpenSans-ExtraBold"),
+		url(../fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face{
+	font-family: OpenSans;
+	src:local("OpenSans-Regular"),
+		url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face{
+	font-family: Daxline;
+	src:local("Daxline"),
+		url(../fonts/Daxline.otf);
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+
+}
+a{
+	color: #fff;
+	text-decoration: none;
+}
+input{
+	border: 0;
+}
+textarea{
+	border: 0;
+}
+.f_left{
+	float: left;
+}
+.f_right{
+	float: right;
+}
+.clr{
+	clear: both;
+	height: 0%;
+}
+/*---------------------------------------*/
+html, body{
+	background: #fff;
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper{
+	width: 900px;
+	/*height: 100%;*/
+	margin: 0 auto;
+	border: solid 1px #000;
+	background: #ccc;
+	/*min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto -100px;*/
+
+}
+/*------------------HEADER START---------------------*/
+
+h1{
+	font-size: 20px;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+
+
+
+.mainForm{
+
+	width: 90%;
+	padding-top: 20px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+
+}
+
+
+.textInput{
+	line-height: ;
+	height: 30px;
+	border: solid 1px #ccc;
+	padding-left: 10px;
+	width: 290px;
+	/*line-height: 30px;*/
+	vertical-align: middle;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+	color: #333;
+}
+
+
+.checkBox{
+	/*line-height: 10px;
+	height: 10px;*/
+	border: solid 1px #ccc;
+	padding-left: 10px;
+/*	width: 290px;*/
+	/*line-height: 30px;*/
+	/*	*/
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+	color: #333;
+/*	margin-left: 50px;
+*/	line-height: 20px;
+	margin-right: 10px;
+}
+
+
+.checkBoxRow label{
+	font-weight: normal;
+	line-height: 20px;
+}
+
+
+.radioButton{
+/*	margin-left: 50px;
+*/	margin-right: 10px;
+}
+
+
+.formGroup{
+	width: 100%;
+	margin-top: 10px;
+	margin-left: 20px;
+	/*height: 50px;*/
+	
+}
+
+.formGroup p{
+	float: left;
+	line-height: 50px;
+	width: 200px;
+	text-align: right;
+}
+
+.formGroup span{
+	line-height: 50px;
+	
+}
+
+
+.checkBoxBlock span{
+	line-height: 20px;
+}
+
+
+select{
+	width: 310px;
+	height: 30px;
+	background: #fff;
+	border: solid 1px #999;
+	vertical-align: middle;
+	border-radius: 2px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+	/*background: url('../images/down_arrow1.png') no-repeat 270px 2px #fff;*/
+	padding-right: 5px;
+	
+}
+
+
+
+
+label{
+	margin-right: 5px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+
+
+.buttonSend {
+	display: block;
+	margin-top: 30px;
+	margin-right: 15px;
+	  position: relative;
+	  display: inline-block;
+	  font-size: 90%;
+	  font-weight: 700;
+	  color: rgb(209,209,217);
+	  text-decoration: none;
+	  text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+	  padding: .5em 1em;
+	  outline: none;
+	  border-radius: 3px;
+	  background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+	  box-shadow:
+	   0 1px rgba(255,255,255,.2) inset,
+	   0 3px 5px rgba(0,1,6,.5),
+	   0 0 1px 1px rgba(0,1,6,.2);
+	  transition: .2s ease-in-out;
+	  margin: 0 auto;
+	  margin-top: 30px;
+}
+.buttonSend:hover:not(:active) {
+  background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+  cursor: pointer;
+}
+.buttonSend:active {
+  top: 1px;
+  background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+  box-shadow:
+   0 0 1px rgba(0,0,0,.5) inset,
+   0 2px 3px rgba(0,0,0,.5) inset,
+   0 1px 1px rgba(255,255,255,.1);
+}
+
+/*For index.2 php*/
+
+
+
+.tableForm{
+
+	width: 100%;
+	/*background: green;*/
+
+}
+
+table{
+	border-collapse: collapse;
+}
+
+.tableForm td{
+
+	border: solid 1px #696969;
+	box-shadow:
+   1px 1px 0px rgba(100,100,100,.3);
+}
+
+
+.tableForm td{
+	padding: 10px;
+	
+}
+
+
+
+
+.tableForm td:first-child{
+
+	text-align: right;
+	width: 35%;
+	overflow: hidden;
+	vertical-align: middle;
+
+}
+
+
+
+.selectWrap{
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+label{
+	font-weight: normal;
+}
+
+option{
+	display: block;
+	height: 25px;
+	vertical-align: middle;
+	line-height: 25px;padding-top: 5px;
+	padding-left: 5px;
+
+}
+
+
+textarea{
+	padding:10px;
+}
+
+
+.select{
+	width: 100px;
+	margin-top: 6px;
+	margin-bottom: 8px;
+	margin-left: 10px;
+}
+
+
+
+.addButton{
+	margin-top: 9px;
+	margin-left: 10px;
+	background: #333;
+	color: #fff;
+	padding: 5px;
+	text-align: center;
+	border:solid 1px #000;
+}
+
+
+a{
+	color: blue;
+	line-height: 50px;
+	margin-left: 15px;
+}
+
+
+#factureNumber{
+	width: 190px;
+}
+
+.buttonSend{
+	
+}
+
+.centerButton{
+	width: 10%;
+	margin: 0 auto;
+}
+
+.inputInactive{
+	background: #ccc;
+	
+}
