@@ -5,18 +5,12 @@
       $('#updateFormButton').click(function(){
 
           loadObjects();
+          loadType();
 
       });
 
 
-
-      
-
-
-
-
       function loadObjects(){
-
 
             if($('option').is('.objectNameList')){
               $('.objectNameList').remove();
@@ -39,7 +33,7 @@
                       var data = eval("("+data+")");
 
                       for(var i=0; i<data.length; i++){
-                        console.log(data[i]);
+                        //console.log(data[i]);
                         $('#objectName').append("<option value='"+data[i]+"' class='objectNameList'>"+data[i]+"</option>");
                       };
                       
@@ -52,11 +46,54 @@
                           console.log('Возникла ошибка: ' + xhr.responseCode);
 
                 }
+            });
+
+      }
+
+
+
+      function loadType(){
+
+            if($('option').is('.denominationList')){
+              $('.denominationList').remove();
+            }
+
+            if($('option').is('.typeList')){
+              $('.typeList').remove();
+            }
+
+            var msg = {
+              loadNewTypes: true
+            };
+          
+          $.ajax({
+          
+              type: 'POST',
+              url: '../php/output_main_form.php',
+              data: msg,
+                success: function(data) {
+                      
+                    if(data){
+
+
+                      var data = eval("("+data+")");
+                      //console.log(data);
+
+
+                      data.forEach(function(item,i,data){
+                        //console.log(data[i].denomination+"   "+data[i].type);
+                          $('#denomination').append("<option value='"+data[i].denomination+"' class='denominationList'>"+data[i].denomination+"</option>");
+                          $('#type').append("<option value='"+data[i].type+"' class='typeList'>"+data[i].type+"</option>");
+                      });
+
+                    }
+                },
+
+                error:  function(xhr, str){
+                          console.log('Возникла ошибка: ' + xhr.responseCode);
+
+                }
           });
-
-
-
-
       }
 
 

@@ -44,15 +44,15 @@
 					<td>
 						
 						<span class="selectWrap f_left">
-							<select name="" id="">
-								<option value="">Счетчик жидкости</option>
+							<select name="" id="denomination">
+								<option value="">Выберите наименование</option>
 								
 							</select>
 						</span>
 						<a href="" target="_blank">Добавить наименование</a>
 						<div class="clr"></div>
 						<span class="selectWrap f_left">
-							<select name="" id="">
+							<select name="" id="type">
 								<option value="">Тип, марка</option>
 								
 							</select>
