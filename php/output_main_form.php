@@ -10,7 +10,7 @@
 		//some code here
 		include_once ("config.php");
 
-		mysql_query("SET NAMES UTF8");
+		mysql_query("SET NAMES UTF-8");
 
 		$result = mysql_query("SELECT DISTINCT ob FROM ob");
 		$result_array = array();

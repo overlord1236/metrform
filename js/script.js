@@ -17,6 +17,11 @@
 
       function loadObjects(){
 
+
+            if($('option').is('.objectNameList')){
+              $('.objectNameList').remove();
+            }
+
             var msg = {
               loadNewObjects: true
             };
@@ -30,7 +35,14 @@
                       
                     if(data){
 
-                      console.log(data);
+
+                      var data = eval("("+data+")");
+
+                      for(var i=0; i<data.length; i++){
+                        console.log(data[i]);
+                        $('#objectName').append("<option value='"+data[i]+"' class='objectNameList'>"+data[i]+"</option>");
+                      };
+                      
                       
 
                     }
