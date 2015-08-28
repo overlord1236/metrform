@@ -1,8 +1,7 @@
 <?php 
 
-	//header("Content-Type: text/html; charset=utf-8");
 	
-	include_once ("config1.php");
+	include_once ("config.php");
 	
 
 	$object_name = clear_data($_POST['object_name']);
@@ -13,22 +12,8 @@
 	
 	$response = array();
 
-	// $connection = mysql_connect('localhost', 'root', 'root');
-	// $db_name = mysql_select_db('srv28816_metro', $connection);
-
-	// mysql_set_charset( 'utf8' );
 	
 	if(isset($object_name)){
-
-		
-		//include('config.php');
-
-		
-
-
-		//$connection = mysql_connect('localhost', 'root', '');
-		//$db_name = mysql_select_db('srv28816_metro', $connection);
-
 
 		$request = mysql_query("INSERT INTO ob(ob, ceh, sdal, predo) 
 					  VALUES ('$object_name', '$workshop_name', '$passed_by', '$predo')

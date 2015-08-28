@@ -16,6 +16,8 @@
 
 		<h1>Добавить прибор</h1>
 
+		<button class="updateFormButton" id="updateFormButton">Update form</button>
+
 		
 
 		<form action="form.php" id="mainForm" class="mainForm">
@@ -26,7 +28,7 @@
 					<td><label for="object">Объект</label></td>
 					<td>
 						<span class="selectWrap f_left">
-							<select name="" id="">
+							<select name="objectName" id="objectName">
 								<option value="">Выберите объект</option>
 								
 							</select>

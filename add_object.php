@@ -5,7 +5,7 @@
 	<title>Добавить объект</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="js/form_script.js"></script>
+	<script type="text/javascript" src="js/object_add_script.js"></script>
 </head>
 <body>
 	<div class="wrapper">

@@ -85,6 +85,7 @@ html, body{
         height: auto !important;
         height: 100%;
         margin: 0 auto -100px;*/
+        position: relative;
 
 }
 /*------------------HEADER START---------------------*/
@@ -354,4 +355,34 @@ a{
 	width: 70%;
 	margin: 0 auto;
 	padding: 20px;
+}
+
+
+.updateFormButton{
+
+	width: 150px;
+	height: 30px;
+	border: solid 1px #222;
+	padding: 5px;
+	border-radius: 3px;
+	position: absolute;
+	top: 30px;
+	right: 50px;
+	font-weight: bold;
+	color: #fff;
+	background: #222;
+
+}
+
+.updateFormButton:hover{
+	
+	cursor: pointer;
+	background: #333;
+
+}
+
+.updateFormButton:active{
+	
+	background: #999;
+
 }

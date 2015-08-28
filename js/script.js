@@ -1,43 +1,99 @@
-﻿window.onload = function(){
+﻿$(document).ready(function(){
 
 
-    window.onfocus = function(){
+      
+      $('#updateFormButton').click(function(){
+
+          loadObjects();
+
+      });
+
+
+
+      
+
+
+
+
+      function loadObjects(){
+
+            var msg = {
+              loadNewObjects: true
+            };
+
+            $.ajax({
+          
+              type: 'POST',
+              url: '../php/output_main_form.php',
+              data: msg,
+                success: function(data) {
+                      
+                    if(data){
+
+                      console.log(data);
+                      
+
+                    }
+                },
+
+                error:  function(xhr, str){
+                          console.log('Возникла ошибка: ' + xhr.responseCode);
+
+                }
+          });
+
+
+
+
+      }
+
+
+
+
+
+});
+
+
+    //window.onfocus = function(){
 
 
       //console.log('Вкладка активна');
-      object_update();
+      //object_update();
 
 
-    };
+    //};
 
-    window.onblur = function(){
-      console.log('Вкладка не активна');
-    };
-
-
-
-    function hello(){
-      console.log('Hello');
-    }
+    //window.onblur = function(){
+      //console.log('Вкладка не активна');
+    //};
 
 
-    function object_update(){
-        var http = new XMLHttpRequest();
-        http.open("POST", "../php/output.php", true);
-        http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        http.send("object_update=true");
-        http.onreadystatechange = function() {
-          if (http.readyState == 4 && http.status == 200) {
+
+    // function hello(){
+    //   console.log('Hello');
+    // }
 
 
-            console.log(""+http.responseText+"");
+    // function object_update(){
+    //     var http = new XMLHttpRequest();
+    //     http.open("POST", "../php/output.php", true);
+    //     http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    //     http.send("object_update=true");
+    //     http.onreadystatechange = function() {
+    //       if (http.readyState == 4 && http.status == 200) {
+
+
+    //         console.log(""+http.responseText+"");
                
-          }
-        }
-        http.onerror = function() {
-          alert('Извините, данные не были переданы');
-        }
-    };
+    //       }
+    //     }
+    //     http.onerror = function() {
+    //       alert('Извините, данные не были переданы');
+    //     }
+    // };
+
+
+
 
 
 
@@ -171,5 +227,3 @@
 //getRows();
 //loadTable2.http.onreadystatechange = function(){alert(5);};
 
-
-};
