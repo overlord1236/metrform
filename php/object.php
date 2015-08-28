@@ -11,7 +11,7 @@
 	$predo = "ОАО \"СНГ\"";
 
 	
-	$response;
+	$response = array();
 
 	// $connection = mysql_connect('localhost', 'root', 'root');
 	// $db_name = mysql_select_db('srv28816_metro', $connection);
@@ -36,10 +36,10 @@
 		
 
 		if ($request != true) {
-			$response = false;
+			$response['success'] = false;
 		}
 		else{
-			$response = true;
+			$response['success'] = true;
 		}
 
 		echo json_encode($response);

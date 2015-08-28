@@ -19,7 +19,6 @@
 		}
 
 		else{
-			$('#warn').remove();
 			return true;
 		}
 
@@ -30,11 +29,13 @@
 
 
 
-
+//
 			if(validateForm()){
 
-
-				$('.selectWrap').append("<img src='../images/load.gif' alt='Идет загрузка' style='float:right; margin-left:10px;'>");
+				if(!$('img').is('#loadGif')){
+					$('.selectWrap').append("<img src='../images/load.gif' alt='Идет загрузка' style='float:right; margin-left:10px;' id='loadGif'>");
+				}
+				
 
 				var msg   = $('#add_object').serialize();
 					
@@ -46,14 +47,32 @@
 			            
 					  	if(data){
 
-					  		$('#object_name').attr("disabled", "disabled");
-				            $('.textInput').val('Данные добавлены');
-				            $('.textInput').addClass('inputInactive');
-				            $('.textInput').attr('disabled','disabled');
-				            $('img').remove();
-				            $('#warn').remove();
-				            $('#submit').remove();
-				            window.close();
+					  		$('form').before("<div class='serverResponse'>"+data+"</div>");
+				            console.log(data);
+				            var successFlag = eval("("+data+")");
+
+				            if(successFlag['success']){
+
+				            	$('.serverResponse').remove();
+				            	$('form').before("<div class='serverResponse'>"+"Данные отправлены успешно"+"</div>");
+					            $('.textInput').val('Данные добавлены');
+					            $('.textInput').addClass('inputInactive');
+					            $('.textInput').attr('disabled','disabled');
+					            $('#warn').remove();
+					            $('#submit').remove();
+					            window.close();
+					           
+				            }
+				            else{
+
+				            	$('.serverResponse').remove();
+				            	$('form').before("<div class='serverResponse'>"+"Данные не отправлены"+"</div>");
+
+				            }
+
+
+
+				           console.log(successFlag['success']);
 
 					  	}
 			            
@@ -64,6 +83,7 @@
 			          },
 			          error:  function(xhr, str){
 			                console.log('Возникла ошибка: ' + xhr.responseCode);
+
 			          }
 				});
 

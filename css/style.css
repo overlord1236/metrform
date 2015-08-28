@@ -348,3 +348,10 @@ a{
 	background: #ccc;
 	
 }
+
+
+.serverResponse{
+	width: 70%;
+	margin: 0 auto;
+	padding: 20px;
+}
