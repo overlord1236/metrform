@@ -49,7 +49,7 @@
 								
 							</select>
 						</span>
-						<a href="" target="_blank">Добавить наименование</a>
+						<a href="add_denomination.php" target="_blank">Добавить наименование и тип</a>
 						<div class="clr"></div>
 						<span class="selectWrap f_left">
 							<select name="" id="type">
@@ -57,7 +57,7 @@
 								
 							</select>
 						</span>						
-						<a href="" target="_blank">Добавить марку</a>
+						<!-- <a href="" target="_blank">Добавить марку</a> -->
 						
 
 					</td>
