@@ -29,16 +29,20 @@
                       
                     if(data){
 
+                      $('form').before("<div class='serverResponse'>"+data+"</div>");
 
                       var data = eval("("+data+")");
 
-                      for(var i=0; i<data.length; i++){
-                        //console.log(data[i]);
-                        $('#objectName').append("<option value='"+data[i]+"' class='objectNameList'>"+data[i]+"</option>");
-                      };
-                      
-                      
 
+                      if(data[0].success == true){
+
+                          $('.serverResponse').remove();
+                          data.forEach(function(item,i,data){
+                            console.log(data[i]);
+                            $('#objectName').append("<option value='"+data[i].objectName+"' class='objectNameList'>"+data[i].objectName+"</option>");
+                          });
+                      }
+  
                     }
                 },
 
@@ -75,16 +79,24 @@
                       
                     if(data){
 
+                      $('form').before("<div class='serverResponse'>"+data+"</div>");
 
                       var data = eval("("+data+")");
-                      //console.log(data);
+                     
 
+                      if(data[0].success == true){
 
-                      data.forEach(function(item,i,data){
-                        //console.log(data[i].denomination+"   "+data[i].type);
+                        $('.serverResponse').remove();
+
+                        data.forEach(function(item,i,data){
+                        
                           $('#denomination').append("<option value='"+data[i].denomination+"' class='denominationList'>"+data[i].denomination+"</option>");
                           $('#type').append("<option value='"+data[i].type+"' class='typeList'>"+data[i].type+"</option>");
-                      });
+                        });
+
+                      }
+
+                      
 
                     }
                 },
@@ -97,6 +109,8 @@
       }
 
 
+
+      
 
 
 

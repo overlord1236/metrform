@@ -386,3 +386,8 @@ a{
 	background: #999;
 
 }
+
+
+textarea{
+	resize:none;
+}

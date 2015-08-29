@@ -116,7 +116,7 @@
 				<tr>
 					
 					<td><label for="prim">Примечание</label></td>
-					<td><span><textarea name="prim" id="" cols="60" rows="10"spellcheck="false"></textarea></span></td>
+					<td><span><textarea name="prim" id="" cols="65" rows="10"spellcheck="false"></textarea></span></td>
 				</tr>
 
 

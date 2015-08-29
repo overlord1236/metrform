@@ -11,17 +11,30 @@
 
 	function loadNewObjects(){
 
-		//some code here
 		include_once ("config.php");
 
 		mysql_query("SET NAMES UTF-8");
 
-		$result = mysql_query("SELECT DISTINCT ob FROM ob ORDER BY id_ob DESC");
+
+		class Response{
+			public $objectName;
+			public $success;
+		}
+
+
+
+
+		$result = mysql_query("SELECT DISTINCT ob FROM ob ORDER BY id_ob DESC") or die(mysql_error());
 		$result_array = array();
 
 		while ($row = mysql_fetch_array($result)) {
-				$result_array[] = $row['ob'];
+				$response = new Response;
+				$response->objectName = $row['ob'];
+				$response->success = true;
+				$result_array[] = $response;
+	
 		}
+
 
 		echo json_encode($result_array);
 
@@ -38,9 +51,10 @@
 		class Response{
 			public $type;
 			public $denomination;
+			public $success;
 		}
 
-		$result = mysql_query("SELECT DISTINCT marka, naim FROM marka GROUP BY naim ORDER BY id_marka DESC");
+		$result = mysql_query("SELECT DISTINCT marka, naim FROM marka GROUP BY naim ORDER BY id_marka DESC") or die(mysql_error());
 		$result_array = array();
 
 		while ($row = mysql_fetch_array($result)) {
@@ -49,6 +63,7 @@
 				$response = new Response;
 				$response->type = $row['marka'];
 				$response->denomination = $row['naim'];
+				$response->success = true;
 				$result_array[] = $response;
 		}
 
