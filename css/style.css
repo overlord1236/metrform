@@ -76,7 +76,7 @@ html, body{
 }
 
 .wrapper{
-	width: 950px;
+	width: 890px;
 	/*height: 100%;*/
 	margin: 0 auto;
 	border: solid 1px #000;
@@ -332,9 +332,7 @@ a{
 }
 
 
-#factureNumber{
-	width: 190px;
-}
+
 
 .buttonSend{
 	
@@ -390,4 +388,15 @@ a{
 
 textarea{
 	resize:none;
+}
+
+
+.clrHeight{
+	line-height: normal;
+	margin-bottom: 10px;
+}
+
+
+#measLim{
+	width:190px;
 }

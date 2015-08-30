@@ -49,21 +49,22 @@
 								
 							</select>
 						</span>
-						<a href="add_denomination.php" target="_blank">Добавить наименование и тип</a>
+						
 						<div class="clr"></div>
 						<span class="selectWrap f_left">
 							<select name="" id="type">
 								<option value="">Тип, марка</option>
 								
 							</select>
-						</span>						
+						</span>		
+						<div class="clr"></div>
+						<br>
+						<a href="add_denomination.php" target="_blank" class="f_left clrHeight">Добавить наименование и тип</a>				
 						<!-- <a href="" target="_blank">Добавить марку</a> -->
 						
 
 					</td>
 				</tr>
-
-
 
 				<tr>
 				
@@ -72,11 +73,27 @@
 					</td>
 					<td>
 						<span class="selectWrap f_left"><input type="text" name="object" class="textInput" placeholder="Введите заводской номер" id="factureNumber"></span>
-						<select name="" id="" class="select">
-							<option value="">RV</option>
-							<option value="">WB</option>
+						
+
+						<div class="clr"></div>
+					</td>
+
+				</tr>	
+
+
+
+
+				<tr>
+				
+					<td>
+						<label for="object">Измеряемая величина</label>
+					</td>
+					<td>
+						<span class="selectWrap f_left"><input type="text" name="object" class="textInput" placeholder="Введите предел измерений" id="measLim"></span>
+						<select name="" id="meas" class="select">
+							<option value="Ед. изм">Ед. изм.</option>
 						</select>
-						<a href="" target="_blank">Добавить значение</a>
+						<a href="" target="_blank">Добавить размерность</a>
 
 						<div class="clr"></div>
 					</td>

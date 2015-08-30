@@ -6,6 +6,7 @@
 
           loadObjects();
           loadType();
+          loadMeasLim();
 
       });
 
@@ -109,7 +110,57 @@
       }
 
 
-      
+      function loadMeasLim(){
+
+          if($('option').is('.measList')){
+              $('.measList').remove();
+            }
+
+            var msg = {
+              loadNewMeas: true
+            };
+          
+          $.ajax({
+          
+              type: 'POST',
+              url: '../php/output_main_form.php',
+              data: msg,
+                success: function(data) {
+                      
+                    if(data){
+
+                      $('form').before("<div class='serverResponse'>"+data+"</div>");
+
+                      var data = eval("("+data+")");
+                     
+
+                      if(data[0].success == true){
+
+                        $('.serverResponse').remove();
+
+                        data.forEach(function(item,i,data){
+                        
+                          $('#meas').append("<option value='"+data[i].measurementLimit+"' class='measList'>"+data[i].measurementLimit+"</option>");
+                          
+                        });
+
+                      }
+
+                      
+
+                    }
+                },
+
+                error:  function(xhr, str){
+                          console.log('Возникла ошибка: ' + xhr.responseCode);
+
+                }
+          });
+
+
+
+
+      }
 
 
 

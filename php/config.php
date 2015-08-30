@@ -3,7 +3,7 @@
 	$dblocation = 'localhost';
 	$dbname = 'srv28816_metro';
 	$user = 'root';
-	$password = '';
+	$password = 'root';
 
 	
 
