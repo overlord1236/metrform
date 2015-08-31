@@ -1,13 +1,14 @@
 $(document).ready(function(){
+		
+
 
 
 	function validateForm(){
 
-		var device_name = $('#device_name').val();
-		var device_type = $('#device_type').val();
+		var units = $('#units_name').val();
 
 
-		if(device_name == '' || device_type == ''){
+		if(units == ''){
 
 			if(!$('p').is('#warn')){
 				$('.selectWrap').append("<p id='warn' style='float:right; line-height:30px; margin-left:20px;'>Заполните все поля!</p>");
@@ -16,17 +17,17 @@ $(document).ready(function(){
 		}
 
 		else{
+			$('#warn').remove();
 			return true;
 		}
 
 	}
 	
 
-	$('#add_denomination').submit(function(){
+	$('#add_measure').submit(function(){
 
 
 
-			
 			if(validateForm()){
 
 				if(!$('img').is('#loadGif')){
@@ -34,29 +35,25 @@ $(document).ready(function(){
 				}
 				
 
-				var msg   = $('#add_denomination').serialize();
-
-				console.log(msg);
+				var msg   = $('#add_measure').serialize();
 					
 				$.ajax({
 					
 				  type: 'POST',
-				  url: '../php/denomination.php',
+				  url: '../php/measure.php',
 				  data: msg,
 					  success: function(data) {
+			            	
 
-			            console.log(data);
+			            //console.log(data);	
 					  	if(data){
 
 					  		$('form').before("<div class='serverResponse'>"+data+"</div>");
-					  		$('#loadGif').remove();
 				            console.log(data);
 				            var successFlag = eval("("+data+")");
 
 				            if(successFlag['success']){
 
-
-				            	$('#loadGif').remove();
 				            	$('.serverResponse').remove();
 				            	$('form').before("<div class='serverResponse'>"+"Данные отправлены успешно"+"</div>");
 					            $('.textInput').val('Данные добавлены');
@@ -64,12 +61,11 @@ $(document).ready(function(){
 					            $('.textInput').attr('disabled','disabled');
 					            $('#warn').remove();
 					            $('#submit').remove();
-
 					            window.close();
 					           
 				            }
 				            else{
-				            	$('#loadGif').remove();
+
 				            	$('.serverResponse').remove();
 				            	$('form').before("<div class='serverResponse'>"+"Данные не отправлены"+"</div>");
 
@@ -99,5 +95,5 @@ $(document).ready(function(){
 
 	});
 
-
+	
 });

@@ -353,6 +353,7 @@ a{
 	width: 70%;
 	margin: 0 auto;
 	padding: 20px;
+	text-align: center;
 }
 
 
@@ -399,4 +400,13 @@ textarea{
 
 #measLim{
 	width:190px;
+}
+
+#meas{
+	width: 80px;
+}
+
+.alignRight{
+	text-align: right;
+	padding-right: 10px;
 }
